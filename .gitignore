@@ -1,0 +1,16 @@
+# Python venv folders
+Lib
+Scripts
+__pycache__/
+pyvenv.cfg
+# env files
+.env
+environment.env
+# devlopment purposes
+pgdata/
+# Ignore Log Files
+*.logs
+# Testing FIles
+*test*
+# LLMS
+llms

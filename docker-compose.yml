@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - environment.env
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  app-service:
+    restart: always
+    container_name: app-service
+    build:
+      context: ./app-service
+      dockerfile: Dockerfile
+    ports:
+      - 8081:80
+    volumes:
+      - ./app-service/threatmatic:/opt/app
+    privileged: true
